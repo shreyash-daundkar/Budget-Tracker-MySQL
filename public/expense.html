@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Expense tracker</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
+      integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <header id="main-header" class="bg-success text-white p-4 mb-3">
+      <div class="container">
+          <div class="row">
+              <div class="col-md-6">
+                  <h1 id="header-title">Budget tracker</h1>
+              </div>
+              <div class="col-md-6 text-right">
+                  <button id = "premium-btn", class="btn btn-warning">Go Premium</button>
+              </div>
+          </div>
+      </div>
+  </header>
+
+    <div class="container">
+      <div id="main" class="card card-body">
+        <div class="row">
+          <div class="col-md-6">
+            <h2 class="title">Add Expense</h2>
+          </div>
+          <div class="col-md-6 text-right" id="header-btn">
+              <button id="view-report-btn" class="btn btn-primary">View Report</button>
+          </div>
+      </div>
+            <form id="add-form" class="form-inline mb-3">
+              <input
+                type="number"
+                class="form-control mr-2"
+                id="form-amount"
+                placeholder="Amount"
+              />
+              <select class="form-control mr-2" name="category" id="form-category">
+                <option value="rent">Rent</option>
+                <option value="traval">Traval</option>
+                <option value="food">Food</option>
+                <option value="other">Other</option>
+              </select>
+              <input
+                type="text"
+                class="form-control mr-2"
+                id="form-des"
+                placeholder="Description"
+              />
+              <input type="submit" class="btn btn-dark" value="Add" />
+            </form> 
+            <div class="row">
+              <div class="col-md-6">
+                <h2 class="title">Expenses</h2>
+              </div>
+              <div class="col-md-6 text-right">
+                <div id="pagination" class="btn-group">
+                    <button id="prev-btn" class="btn btn-secondary">Previous</button>
+                    <button id="next-btn" class="btn btn-secondary">Next</button>
+                </div>
+                <select id="items-per-page" class="custom-select">
+                    <option value="1">1 per page</option>
+                    <option value="2">2 per page</option>
+                    <option value="3">3 per page</option>
+                    <option value="4">4 per page</option>
+                    <option value="5">5 per page</option>
+                </select>
+            </div>
+            </div>
+        <ul id="list" class="list-group"></ul>
+      </div>
+    </div>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
+    <script src="./scripts/expense.js"></script>
+  </body>
+</html>
